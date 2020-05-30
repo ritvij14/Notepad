@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "348293508206",
+    "firebase_url": "https://notepadd-21ad5.firebaseio.com",
+    "project_id": "notepadd-21ad5",
+    "storage_bucket": "notepadd-21ad5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348293508206:android:c3f8e4906459517a3eca7f",
+        "android_client_info": {
+          "package_name": "com.example.notepad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348293508206-v4ng28ok9q3qsjb0rcqhhf8tfvmiais1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgyDwTjq9ahhHLy8SOIX1JxLVMCZJbi-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348293508206-v4ng28ok9q3qsjb0rcqhhf8tfvmiais1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
