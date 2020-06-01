@@ -2,24 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Agora-Android" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CSA-backend" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CSA-mess-workers-app" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CSAApp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/CoCo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Fountane-HR-Andoroid" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lifespark-Technologies" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Lifespark-Technologies/CoCo" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/MP3-Player" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/NodeJS-Coursera-Ex/conFusionServer" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/NodeJS-Coursera-Ex/node-examples" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/NodeJS-Coursera-Ex/node-express" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/NodeJS-Coursera-Ex/node-http" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Notes-App" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Projects_AR_qstp" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/checkstyle" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/exposure-notifications-android" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/noterr.github.io" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ritvij14.github.io" vcs="Git" />
   </component>
 </project>
