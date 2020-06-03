@@ -36,9 +36,9 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="75dp"
+                    android:layout_marginHorizontal="60dp"
                     android:layout_marginTop="30dp"
-                    android:hint="@string/username"
+                    android:hint="@string/email"
                     android:background="@drawable/edittext_signup"
                     android:padding="10dp"
                     android:textColor="@color/gold"
@@ -48,7 +48,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="75dp"
+                    android:layout_marginHorizontal="60dp"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/gold"
                     android:background="@drawable/edittext_signup"
@@ -61,7 +61,7 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="75dp"
+                    android:layout_marginHorizontal="60dp"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/gold"
                     android:layout_marginBottom="25dp"
