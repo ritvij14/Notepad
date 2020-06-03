@@ -84,7 +84,8 @@
             android:id="@+id/signup_button"
             android:padding="10dp"
             android:background="@drawable/gold_button_black_boundary"
-            android:textSize="40sp"
+            android:textSize="37sp"
+            android:fontFamily="@font/raleway_semi_bold"
             android:textColor="@color/black"
             android:layout_marginTop="40dp"
             style="?android:borderlessButtonStyle"/>
@@ -100,6 +101,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/login_button"
                 android:padding="20dp"
+                android:fontFamily="@font/raleway_semi_bold"
                 android:textSize="20dp"
                 android:textColor="@color/gold"
                 android:background="@drawable/login_button_style"
