@@ -33,15 +33,13 @@ class LoginFragment : Fragment() {
         val loginFragmentLayout: View = inflater.inflate(R.layout.fragment_login, container, false)
         loginUsername = loginFragmentLayout.login_username
         loginPassword = loginFragmentLayout.login_password
-        forgotPassword = loginFragmentLayout.forgot_password_button
+        //forgotPassword = loginFragmentLayout.forgot_password_button
         loginBtn= loginFragmentLayout.login_button
         createAccBtn= loginFragmentLayout.create_account_button
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        forgotPassword.setOnClickListener {
-
-        }
+        //forgotPassword.setOnClickListener {}
 
         loginBtn.setOnClickListener {
 

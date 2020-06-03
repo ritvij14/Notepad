@@ -82,8 +82,9 @@
             android:layout_height="wrap_content"
             android:text="@string/sign_up"
             android:id="@+id/signup_button"
-            android:background="@color/gold"
-            android:textSize="50dp"
+            android:padding="10dp"
+            android:background="@drawable/gold_button_black_boundary"
+            android:textSize="40sp"
             android:textColor="@color/black"
             android:layout_marginTop="40dp"
             style="?android:borderlessButtonStyle"/>
