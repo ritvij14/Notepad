@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".activities.NewNoteActvity"></activity>
+        <activity android:name=".activities.NewNoteActivity"></activity>
         <activity
             android:name=".activities.MainActivity"
             android:label="Notepad"

@@ -1,9 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.NewNoteActvity">
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context=".activities.NewNoteActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_arrow_back_ios_24"
+            android:background="@drawable/edittext_search"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            />
+
+        <ImageButton
+            android:id="@+id/save_note_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_round_note_add_24"
+            android:background="@drawable/edittext_search"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/title_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/title_hint"
+        android:layout_margin="5dp"
+        android:backgroundTint="@color/dull_black"
+        android:fontFamily="@font/raleway_medium"
+        android:textSize="25sp"/>
+
+    <EditText
+        android:id="@+id/note_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:backgroundTint="@color/black"
+        android:layout_margin="5dp"
+        android:hint="@string/add_your_note_here_hint"
+        android:fontFamily="@font/raleway_medium"
+        android:textSize="20sp"/>
+</LinearLayout>

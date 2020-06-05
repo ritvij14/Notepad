@@ -13,6 +13,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        if(intent.getBooleanExtra("EXIT", false)) {
+            finish()
+        }
+
         supportFragmentManager.beginTransaction().replace(R.id.main_frame_layout, loginFragment).commit()
 
     }
