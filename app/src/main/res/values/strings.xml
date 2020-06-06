@@ -12,4 +12,5 @@
     <string name="notepad">NotePad</string>
     <string name="title_hint">Title...</string>
     <string name="add_your_note_here_hint">Add your note here...</string>
+    <string name="logout">Logout</string>
 </resources>

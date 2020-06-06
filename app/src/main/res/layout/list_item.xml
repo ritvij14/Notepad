@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="5dp"
+        android:id="@+id/note_card"
         app:cardElevation="2dp">
 
         <LinearLayout
@@ -33,6 +34,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/note_content"
+                android:maxLines="10"
+                android:ellipsize="end"
+                android:drawablePadding="10dp"
                 android:paddingHorizontal="2dp"
                 android:layout_marginBottom="7dp"
                 android:fontFamily="@font/raleway_medium"

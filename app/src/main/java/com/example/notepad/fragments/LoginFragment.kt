@@ -14,66 +14,64 @@ import android.widget.Toast
 import com.example.notepad.R
 import com.example.notepad.activities.LoginActivity
 import com.example.notepad.activities.MainActivity
+import com.example.notepad.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
 class LoginFragment : Fragment() {
 
-    private lateinit var createAccBtn: Button
-    private lateinit var loginBtn: Button
-    private lateinit var loginUsername: EditText
-    private lateinit var loginPassword: EditText
-    private lateinit var forgotPassword: TextView
+    private lateinit var fragmentLoginBinding: FragmentLoginBinding
     private var email: String? = null
     private var password: String? = null
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val loginFragmentLayout: View = inflater.inflate(R.layout.fragment_login, container, false)
-        loginUsername = loginFragmentLayout.login_username
-        loginPassword = loginFragmentLayout.login_password
-        //forgotPassword = loginFragmentLayout.forgot_password_button
-        loginBtn= loginFragmentLayout.login_button
-        createAccBtn= loginFragmentLayout.create_account_button
+        fragmentLoginBinding = FragmentLoginBinding.inflate(layoutInflater, container,false)
+        val view = fragmentLoginBinding.root
 
         firebaseAuth = FirebaseAuth.getInstance()
+        if(firebaseAuth.currentUser!=null) {
+            val intent: Intent = Intent(activity, MainActivity::class.java)
+            intent.putExtra("id", firebaseAuth.currentUser?.email)
+            startActivity(intent)
+        }
 
-        //forgotPassword.setOnClickListener {}
+        fragmentLoginBinding.loginButton.setOnClickListener {
 
-        loginBtn.setOnClickListener {
-
-            if (loginUsername.text.isEmpty() && loginPassword.text.isEmpty()) {
+            if (fragmentLoginBinding.loginUsername.text.isEmpty() && fragmentLoginBinding.loginPassword.text.isEmpty()) {
                 Toast.makeText(activity, "Please enter your credentials", Toast.LENGTH_SHORT).show()
                 Log.d("LOGIN FRAGMENT", "Properly working")
                 return@setOnClickListener
             }
 
-            if (loginUsername.text.isEmpty()) {
+            if (fragmentLoginBinding.loginUsername.text.isEmpty()) {
                 Toast.makeText(activity, "Please enter your email", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (loginPassword.text.isEmpty()) {
+            if (fragmentLoginBinding.loginPassword.text.isEmpty()) {
                 Toast.makeText(activity, "Please enter password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            email = loginUsername.text.toString()
-            password = loginPassword.text.toString()
+            email = fragmentLoginBinding.loginUsername.text.toString()
+            password = fragmentLoginBinding.loginPassword.text.toString()
 
+            Toast.makeText(activity, "Logging in...", Toast.LENGTH_SHORT).show()
             loginTask(email!!, password!!)
         }
 
-        createAccBtn.setOnClickListener {
+        fragmentLoginBinding.createAccountButton.setOnClickListener {
 
             (context as LoginActivity).supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.main_frame_layout, SignupFragment.newInstance())
+                .addToBackStack(null)
                 .commit()
         }
 
-        return loginFragmentLayout
+        return view
     }
 
     companion object {
@@ -88,7 +86,7 @@ class LoginFragment : Fragment() {
 
             if (task.isSuccessful) {
 
-                var intent: Intent = Intent(activity, MainActivity::class.java)
+                val intent: Intent = Intent(activity, MainActivity::class.java)
                 intent.putExtra("id", firebaseAuth.currentUser?.email)
                 startActivity(intent)
             }

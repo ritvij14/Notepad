@@ -12,16 +12,14 @@ import android.widget.Toast
 import com.example.notepad.R
 import com.example.notepad.activities.LoginActivity
 import com.example.notepad.activities.MainActivity
+import com.example.notepad.databinding.FragmentSignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.fragment_signup.view.*
 
 class SignupFragment : Fragment() {
 
-    private lateinit var signupUsername: EditText
-    private lateinit var signupPassword: EditText
-    private lateinit var signupConfirmPassword: EditText
-    private lateinit var signupButton: Button
-    private lateinit var loginFragmentBtn: Button
+    private lateinit var fragmentSignupBinding: FragmentSignupBinding
+
     private lateinit var email: String
     private lateinit var password: String
     private lateinit var passConfirm: String
@@ -29,68 +27,72 @@ class SignupFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        val signupFragmentLayout: View = inflater.inflate(R.layout.fragment_signup, container, false)
-        signupUsername = signupFragmentLayout.signup_username
-        signupPassword = signupFragmentLayout.signup_password
-        signupConfirmPassword = signupFragmentLayout.signup_confirm_password
-        signupButton = signupFragmentLayout.signup_button
-        loginFragmentBtn = signupFragmentLayout.login_button
+        fragmentSignupBinding = FragmentSignupBinding.inflate(layoutInflater, container, false)
+        var view = fragmentSignupBinding.root
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        signupButton.setOnClickListener {
+        fragmentSignupBinding.signupButton.setOnClickListener {
 
-            if (signupUsername.text.isEmpty() && signupPassword.text.isEmpty() && signupConfirmPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupUsername.text.isEmpty() &&
+                fragmentSignupBinding.signupPassword.text.isEmpty() &&
+                fragmentSignupBinding.signupConfirmPassword.text.isEmpty()) {
+
                 Toast.makeText(activity, "Please enter your credentials", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupUsername.text.isEmpty() && signupPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupUsername.text.isEmpty() &&
+                fragmentSignupBinding.signupPassword.text.isEmpty()) {
+
                 Toast.makeText(activity, "Please enter your credentials", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupPassword.text.isEmpty() && signupConfirmPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupPassword.text.isEmpty() &&
+                fragmentSignupBinding.signupConfirmPassword.text.isEmpty()) {
+
                 Toast.makeText(activity, "Please enter your credentials", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupUsername.text.isEmpty() && signupConfirmPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupUsername.text.isEmpty() &&
+                fragmentSignupBinding.signupConfirmPassword.text.isEmpty()) {
+
                 Toast.makeText(activity, "Please enter your credentials", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupUsername.text.isEmpty()) {
+            if (fragmentSignupBinding.signupUsername.text.isEmpty()) {
                 Toast.makeText(activity, "Please enter your email", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupPassword.text.isEmpty()) {
                 Toast.makeText(activity, "Please enter your password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            if (signupConfirmPassword.text.isEmpty()) {
+            if (fragmentSignupBinding.signupConfirmPassword.text.isEmpty()) {
                 Toast.makeText(activity, "Please confirm your password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            email = signupUsername.text.toString()
-            password = signupPassword.text.toString()
-            passConfirm = signupConfirmPassword.text.toString()
+            email = fragmentSignupBinding.signupUsername.text.toString()
+            password = fragmentSignupBinding.signupPassword.text.toString()
+            passConfirm = fragmentSignupBinding.signupConfirmPassword.text.toString()
 
             signupTask(email, password, passConfirm)
-
         }
 
-        loginFragmentBtn.setOnClickListener { v ->
+        fragmentSignupBinding.loginButton.setOnClickListener { v ->
             (context as LoginActivity).supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.main_frame_layout, LoginFragment.newInstance())
                 .commit()
         }
 
-        return signupFragmentLayout
+        return view
     }
 
     companion object {

@@ -14,11 +14,23 @@
         android:orientation="horizontal"
         android:paddingTop="10dp">
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:id="@+id/logout_button"
+            android:textColor="@color/gold"
+            android:fontFamily="@font/raleway_medium"
+            android:textSize="12sp"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/black_button_gold_boundary"/>
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="30sp"
-            android:layout_weight="10"
+            android:layout_weight="1"
+            android:paddingEnd="40dp"
             android:paddingStart="30dp"
             android:gravity="center"
             android:fontFamily="@font/raleway_semi_bold"
@@ -37,15 +49,6 @@
             />
 
     </LinearLayout>
-
-    <EditText
-        android:layout_marginHorizontal="10dp"
-        android:drawableStart="@drawable/ic_round_search_24"
-        android:background="@drawable/edittext_search"
-        android:textSize="16sp"
-        android:padding="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
