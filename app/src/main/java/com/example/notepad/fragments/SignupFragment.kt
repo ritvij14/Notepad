@@ -111,6 +111,7 @@ class SignupFragment : Fragment() {
                     var intent: Intent = Intent(activity, MainActivity::class.java)
                     intent.putExtra("id", firebaseAuth.currentUser?.email)
                     startActivity(intent)
+                    activity?.finish()
                 }
 
                 else {

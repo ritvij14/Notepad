@@ -28,6 +28,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
 
@@ -60,6 +61,8 @@ class MainActivity : AppCompatActivity() {
             notesRecycler.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
             gridLayoutButton.setImageResource(R.drawable.ic_round_list_alt_24)
         }
+
+        notes = ArrayList()
 
         makeRecyclerView()
 
