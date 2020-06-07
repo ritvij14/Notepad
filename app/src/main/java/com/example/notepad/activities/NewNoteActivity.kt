@@ -39,8 +39,7 @@ class NewNoteActivity : AppCompatActivity() {
         }
 
         activityNewNoteBinding.backButton.setOnClickListener {
-            var returnIntent = Intent(this, MainActivity::class.java)
-            startActivity(returnIntent)
+
             finish()
         }
 
@@ -70,7 +69,7 @@ class NewNoteActivity : AppCompatActivity() {
                 saveArrayList(list!!)
             }
 
-            val returnIntent: Intent = Intent(this, MainActivity::class.java)
+            val returnIntent = Intent(this, MainActivity::class.java)
             startActivity(returnIntent)
             finish()
         }

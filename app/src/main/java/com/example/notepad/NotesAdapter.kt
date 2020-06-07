@@ -43,7 +43,6 @@ class NotesAdapter(private val notesList: ArrayList<NotesListItem>, private val 
             var editIntent = Intent(context, NewNoteActivity::class.java)
             editIntent.putExtra("edit_position", position)
             context.startActivity(editIntent)
-            (context as MainActivity).finish()
         }
 
         holder.itemView.setOnLongClickListener {

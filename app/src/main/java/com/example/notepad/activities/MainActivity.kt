@@ -1,6 +1,7 @@
 package com.example.notepad.activities
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
@@ -60,20 +61,7 @@ class MainActivity : AppCompatActivity() {
             gridLayoutButton.setImageResource(R.drawable.ic_round_list_alt_24)
         }
 
-        notes = ArrayList<NotesListItem>()
-
-        if (sharedPreferences.contains("100")) {
-            notes = getArrayList()
-        }
-
-        //Dummy members for arraylist
-        /*for (i in 1..2) {
-            notes.add(NotesListItem("Dummy Title", "Lorem Ipsum dummy text"))
-        }*/
-
-        notesAdapter = NotesAdapter(notes, this)
-
-        notesRecycler.adapter = notesAdapter
+        makeRecyclerView()
 
         gridLayoutButton.setOnClickListener {
             if(sharedPreferences.getBoolean("list", true)) {
@@ -89,7 +77,6 @@ class MainActivity : AppCompatActivity() {
 
         floatingActionButton.setOnClickListener {
             startActivity(Intent(this, NewNoteActivity::class.java))
-            finish()
         }
 
         logoutButton.setOnClickListener {v ->
@@ -124,5 +111,14 @@ class MainActivity : AppCompatActivity() {
         val json: String? = sharedPreferences.getString("100", null)
         val type = object: TypeToken<ArrayList<NotesListItem>>() {}.type
         return gson.fromJson(json, type)
+    }
+
+    private fun makeRecyclerView() {
+
+        if (sharedPreferences.contains("100")) {
+            notes = getArrayList()
+        }
+        notesAdapter = NotesAdapter(notes, this)
+        notesRecycler.adapter = notesAdapter
     }
 }
