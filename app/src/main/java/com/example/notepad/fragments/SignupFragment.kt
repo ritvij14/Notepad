@@ -111,11 +111,10 @@ class SignupFragment : Fragment() {
                     var intent: Intent = Intent(activity, MainActivity::class.java)
                     intent.putExtra("id", firebaseAuth.currentUser?.email)
                     startActivity(intent)
-                    activity?.finish()
                 }
 
                 else {
-                    Toast.makeText(activity, "Error!!!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity, "Error!!! Either password less than 6 characters or email already used", Toast.LENGTH_SHORT).show()
                 }
             }
 
